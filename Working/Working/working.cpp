@@ -56,6 +56,13 @@ int main( int argc, char ** argv )
     *(++ip) = 4; //ia[2] = 4 -- pointer incremented with ++, and value assigned at the same time
     
     
+    char s[] = {'s', 't', 'r', 'i', 'n', 'g', 0}; //same as s[] = "string"
+    printf("String is %s\n", s);
+    
+    for(int i = 0; s[i]; i++){
+        printf("char is %c\n", s[i]);
+    }
+    
     return 0;
 }
 
