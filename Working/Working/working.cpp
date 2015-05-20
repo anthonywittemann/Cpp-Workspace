@@ -1,5 +1,6 @@
 // working.cpp by Bill Weinman <http://bw.org/>
 #include <cstdio>
+#include <iostream>
 using namespace std;
 
 int main( int argc, char ** argv )
@@ -67,10 +68,16 @@ int main( int argc, char ** argv )
         printf("char is %c\n", *cp);
     }
     
-    for(char c : s){ //a sensible range loop
+    for(char c : s){ //a sensible range based for loop
         if(c == 0) break; //range function goes all the way to the end of the array, but last element of array is 0
         printf("char is %c\n", c);
     }
+    
+    
+    
+    
+    //stdout -- printf or puts is preffered b/c they use less space and make more sense
+    cout << "Hello, World! " << 2*7 << " another string " << endl; //uses (redefines) bitwise left shift operator <<
     
     return 0;
 }
