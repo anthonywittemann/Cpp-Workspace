@@ -59,8 +59,17 @@ int main( int argc, char ** argv )
     char s[] = {'s', 't', 'r', 'i', 'n', 'g', 0}; //same as s[] = "string"
     printf("String is %s\n", s);
     
-    for(int i = 0; s[i]; i++){
+    for(int i = 0; s[i]; ++i){
         printf("char is %c\n", s[i]);
+    }
+    
+    for(char * cp = s; *cp; ++cp){ //using pointers
+        printf("char is %c\n", *cp);
+    }
+    
+    for(char c : s){ //a sensible range loop
+        if(c == 0) break; //range function goes all the way to the end of the array, but last element of array is 0
+        printf("char is %c\n", c);
     }
     
     return 0;
