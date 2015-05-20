@@ -41,7 +41,21 @@ int main( int argc, char ** argv )
     printf("The value of y is %d:\n", y); //changes b/c now takes in value of z
     printf("The value of z is: %d\n", z);
 
-
+    
+    
+    
+    //Arrays and Strings -- IDK how to create a seperate file or subroutine to call yet from the main
+    int ia[5];
+    ia[0] = 1;
+    *ia = 1; //same as ia[0] = 1
+    int *ip1 = ia;//This defines an integer pointer and assigns the address of the array to the pointer.
+                //Notice that you don't need the address of operator to get an arrays address.
+    *ip1 = 2; //assigns 2 to the first element of the array
+    ++ip1; //now pointing to the 2nd element of ia
+    *ip = 3; //ia[1] = 3
+    *(++ip) = 4; //ia[2] = 4 -- pointer incremented with ++, and value assigned at the same time
+    
     
     return 0;
 }
+
