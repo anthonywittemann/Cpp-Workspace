@@ -1,6 +1,7 @@
 // func.cpp by Bill Weinman <http://bw.org/>
 #include <cstdio>
 #include <iostream>
+#include "func.h"
 using namespace std;
 
 void func()
@@ -8,6 +9,7 @@ void func()
     puts("this is func()");
 }
 
+//everything needs to be declared before it is used, so the main func needs to be below it
 void ch1Func(){
     //refernece example
     //cannot define a reference without also intializing it
@@ -83,11 +85,35 @@ void ch1Func(){
     cout << "Hello, World! " << 2*7 << " another string " << endl; //uses (redefines) bitwise left shift operator <<
 }
 
+void passByValue( int i ){
+    i++;
+    printf("Value is: %d\n", i);
+}
+
+void passByReference( int &i ){
+    i++;
+    printf("Referenced Value is: %d\n", i);
+}
+
+void passByRefWithConst( const int &i ){
+    //i++ -- can't do this b/c reference is a constant
+    printf("Referenced Constant Value is: %d\n", i);
+}
+
+
 int main( int argc, char ** argv )
 {
     puts("this is main()");
-    ch1Func();
-    func();
+    //ch1Func();
+    //func();
+    
+    int x = 3;
+    printf("x is: %d\n", x);
+    passByValue(x);
+    printf("x is: %d\n", x);
+    passByReference(x);
+    printf("x is: %d\n", x);
+    
     return 0;
 }
 
