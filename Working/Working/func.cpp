@@ -1,11 +1,14 @@
-// working.cpp by Bill Weinman <http://bw.org/>
+// func.cpp by Bill Weinman <http://bw.org/>
 #include <cstdio>
 #include <iostream>
 using namespace std;
 
-int main( int argc, char ** argv )
+void func()
 {
-    
+    puts("this is func()");
+}
+
+void ch1Func(){
     //refernece example
     //cannot define a reference without also intializing it
     
@@ -38,10 +41,10 @@ int main( int argc, char ** argv )
     
     y = z; //now all values 149 b/c if you change y, you change x
     printf("The value of x is %d:\n", x); //changes b/c y is still referenced to x
-    printf("The value of *ip is %d:\n", *ip); 
+    printf("The value of *ip is %d:\n", *ip);
     printf("The value of y is %d:\n", y); //changes b/c now takes in value of z
     printf("The value of z is: %d\n", z);
-
+    
     
     
     
@@ -50,7 +53,7 @@ int main( int argc, char ** argv )
     ia[0] = 1;
     *ia = 1; //same as ia[0] = 1
     int *ip1 = ia;//This defines an integer pointer and assigns the address of the array to the pointer.
-                //Notice that you don't need the address of operator to get an arrays address.
+    //Notice that you don't need the address of operator to get an arrays address.
     *ip1 = 2; //assigns 2 to the first element of the array
     ++ip1; //now pointing to the 2nd element of ia
     *ip = 3; //ia[1] = 3
@@ -78,7 +81,13 @@ int main( int argc, char ** argv )
     
     //stdout -- printf or puts is preffered b/c they use less space and make more sense
     cout << "Hello, World! " << 2*7 << " another string " << endl; //uses (redefines) bitwise left shift operator <<
-    
+}
+
+int main( int argc, char ** argv )
+{
+    puts("this is main()");
+    ch1Func();
+    func();
     return 0;
 }
 
