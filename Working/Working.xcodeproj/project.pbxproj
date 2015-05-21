@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDC8401A1B0D684B0018FBF4 /* variadic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDC840191B0D684B0018FBF4 /* variadic.cpp */; };
+		EDC8401C1B0D6AC20018FBF4 /* recursive-factorial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDC8401B1B0D6AC20018FBF4 /* recursive-factorial.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EDC840191B0D684B0018FBF4 /* variadic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = variadic.cpp; sourceTree = "<group>"; };
+		EDC8401B1B0D6AC20018FBF4 /* recursive-factorial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "recursive-factorial.cpp"; sourceTree = "<group>"; };
 		EDDDB92F1B0B043100B1BF4C /* Working */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Working; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -57,7 +57,7 @@
 		EDDDB9311B0B043100B1BF4C /* Working */ = {
 			isa = PBXGroup;
 			children = (
-				EDC840191B0D684B0018FBF4 /* variadic.cpp */,
+				EDC8401B1B0D6AC20018FBF4 /* recursive-factorial.cpp */,
 			);
 			path = Working;
 			sourceTree = "<group>";
@@ -118,7 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDC8401A1B0D684B0018FBF4 /* variadic.cpp in Sources */,
+				EDC8401C1B0D6AC20018FBF4 /* recursive-factorial.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
