@@ -1,5 +1,6 @@
 // working.cpp by Bill Weinman <http://bw.org/>
 #include <cstdio>
+#include "constructors.h"
 using namespace std;
 
 //structs and classes are identical except for the fact that
@@ -58,6 +59,21 @@ int main( int argc, char ** argv )
     b.setValue(42);
     printf("The value is: %d", b.getValue());
     printf("The value is: %d", bubble.getValue());
+    
+    
+    
+    //from constructors.cpp
+    Animal animal;
+    animal.print();
+    
+    const Animal banimal("goat", "bob", "baah");
+    banimal.print();
+    
+    const Animal canimal = banimal;
+    canimal.print();
+    
+    animal = canimal;
+    animal.print();
     
     return 0;
 }
