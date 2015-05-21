@@ -95,6 +95,9 @@ void passByReference( int &i ){
     printf("Referenced Value is: %d\n", i);
 }
 
+//Very often the functions and methods in a library will have constant references instead of variables.
+//it's actually faster and more efficient in cases where the thing that you're passing is rather large
+//want to use when the object being passed is large
 void passByRefWithConst( const int &i ){
     //i++ -- can't do this b/c reference is a constant
     printf("Referenced Constant Value is: %d\n", i);
@@ -113,6 +116,13 @@ int main( int argc, char ** argv )
     printf("x is: %d\n", x);
     passByReference(x);
     printf("x is: %d\n", x);
+    
+    
+    //function pointers
+    void(*fp)() = func; //create a pointer to func with return type void
+                //parenthesis around (*fp) necessary for operator precedence
+    fp; //calling func using the pointer
+                //can also be written as a pointer dereference (*fp);
     
     return 0;
 }
