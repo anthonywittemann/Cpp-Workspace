@@ -10,9 +10,17 @@ using namespace std;
 #define MACRO(a, b) (a * b)
 #define MAX(a, b) (a > b ? a : b)
 
+//line continuation -- ^= is XOR
+#define SWAP(a, b) do { \
+                        a ^= b;   \
+                        b ^= a;   \
+                        a ^= b;   \
+                    }while(0)
+
 int main( int argc, char ** argv )
 {
-    //puts("Hello, World!");
+    puts("Hel\
+         lo, World!"); //line continutation with \ and new line
     printf("ONE: %d\n", ONE);
     printf("preprocessor macro: %s\n", _sOne); //_sOne is defined in preproc.h
     
@@ -20,5 +28,9 @@ int main( int argc, char ** argv )
     int ib = 6;
     printf("Macro product: %d\n", MACRO(ia, ib)); //MACRO(ia, ib) is equivalent to (ia * ib)
     printf("Max: %d\n", MAX(ia, ib));
+    
+    printf("ia is %d, ib is %d\n", ia, ib);
+    SWAP(ia, ib);
+    printf("ia is %d, ib is %d\n", ia, ib);
     return 0;
 }
