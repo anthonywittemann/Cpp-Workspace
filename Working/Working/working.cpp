@@ -1,6 +1,7 @@
 // working.cpp by Bill Weinman <http://bw.org/>
 #include <cstdio>
 #include "constructors.h"
+#include "namespace.h"
 using namespace std;
 
 //structs and classes are identical except for the fact that
@@ -23,7 +24,8 @@ public:
 
 //definition of the class
 int B::getValue(){
-    puts("Mutable getter");
+    //puts("Mutable getter");
+    printf("getValue(): this is %p\n", this); //printing out address of current object
     return b;
 }
 
@@ -35,8 +37,6 @@ int B::getValue() const{
 void B::setValue( const int b1 ) {
     b = b1;
 }
-
-
 
 
 
@@ -61,19 +61,32 @@ int main( int argc, char ** argv )
     printf("The value is: %d", bubble.getValue());
     
     
+    printf("\n\n\n");
     
-    //from constructors.cpp
+    
+    //from constructors.h
     Animal animal;
     animal.print();
     
     const Animal banimal("goat", "bob", "baah");
     banimal.print();
     
-    const Animal canimal = banimal;
+    const Animal canimal = banimal; //copy constructor called
     canimal.print();
     
-    animal = canimal;
+    animal = canimal; //copy operator called
     animal.print();
+    
+    printf("\n\n\n");
+    
+    //from namespace.h
+    bwstring::string s(s1); //attaches a prefix to the string to ID where it is coming from
+    std::puts(s.c_str());
+    
+    printf("\n\n\n");
+    
+    //this pointer
+    printf("getValue(): this is %p\n", &b); //printing out address of class -- matches what "this" prints out
     
     return 0;
 }
