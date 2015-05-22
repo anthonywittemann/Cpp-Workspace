@@ -41,5 +41,13 @@ int main( int argc, char ** argv )
     printf("size of float in bytes is %ld\n", sizeof(f));
     printf("size of double float in bytes is %ld\n", sizeof(df));
     printf("size of long double float in bytes is %ld\n", sizeof(ldf));
+    
+    //_______________________chars and strings______________________
+    char cString[] = "String" " is " "Bling"; //3 concatinated string
+    printf("size of cString[] is %ld\n", sizeof(cString)); //size of 16 even tho 15 chars - b/c of null terminator
+    
+    //_______________________ char escape sequences_________________
+    puts("This is a str \\ \' \" \x40 \u03bc"); //prints out This is a str \ ' " @ μ
+    
     return 0;
 }
