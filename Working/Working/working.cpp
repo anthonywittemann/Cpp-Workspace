@@ -29,5 +29,17 @@ int main( int argc, char ** argv )
     x = 0223; //octal
     x = 42U; //unsigned
     x = 0b1001001; //binary
+    
+    
+    //_______________________floating point________________________
+    float f = 10.01; //f = 1.001e1
+    double df = 1231.128312; //df = 1.231128312e3
+    long double ldf = 9.1241212391231e5; //ldf = 912412.12391231
+    
+    printf("f: %1.10f\n", f); //fp rounding error?
+    
+    printf("size of float in bytes is %ld\n", sizeof(f));
+    printf("size of double float in bytes is %ld\n", sizeof(df));
+    printf("size of long double float in bytes is %ld\n", sizeof(ldf));
     return 0;
 }
