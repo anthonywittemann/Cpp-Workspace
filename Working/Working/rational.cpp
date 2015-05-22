@@ -12,7 +12,7 @@ public:
     inline int numerator() const { return _n; };
     inline int denominator() const { return _d; };
     Rational & operator = ( const Rational & );
-    Rational operator + ( const Rational & ) const;
+    Rational operator + ( const Rational & ) const; // $$ comment this out
     Rational operator - ( const Rational & ) const;
     Rational operator * ( const Rational & ) const;
     Rational operator / ( const Rational & ) const;
@@ -28,7 +28,7 @@ Rational & Rational::operator = ( const Rational & rhs ) {
     return *this;
 }
 
-Rational Rational::operator + ( const Rational & rhs ) const {
+Rational Rational::operator + ( const Rational & rhs ) const {  //$$ comment this out
     return Rational((_n * rhs._d) + (_d * rhs._n), _d * rhs._d);
 }
 
@@ -48,6 +48,12 @@ Rational::~Rational() {     //destructor
     printf("dtor %d/%d\n", _n, _d);
     _n = 0; _d = 1;
 }
+
+
+// $$ - replaced from above + overload
+//Rational  + ( const Rational & lhs, const Rational & rhs ) {
+//    return Rational((lhs.numerator() * rhs.denominator()) + (lhs.denominator() * rhs.numerator()), lhs.denominator() * rhs.denominator());
+//}
 
 // << operator overload - useful for std::cout
 std::ostream & operator << (std::ostream & o, const Rational & r) {
@@ -74,6 +80,11 @@ int main( int argc, char ** argv ) {
     cout << a << " - " << b << " = " << a - b << endl;
     cout << a << " * " << b << " = " << a * b << endl;
     cout << a << " / " << b << " = " << a / b << endl;
+    
+    //cout << 14 << " + " << a << " = " << 14 + a << endl; //doesn't work b/c literal 14 doesn't have overloaded + operator
+    cout << a << " + " << 14 << " = " << a + 14 << endl; //works b/c constructor will do implicit conversion when only provided with one parameter and assign denominator to 1
+    
+    //way to make 14 + a work -- see commented sections with code $$
     
     d = c = b = a; //assignment operator is expected to be chained in C++
     printf("a: %d/%d\n", a.numerator(), a.denominator());
