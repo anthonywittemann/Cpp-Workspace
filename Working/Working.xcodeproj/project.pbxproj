@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDC840211B0E6A600018FBF4 /* working.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDC840201B0E6A600018FBF4 /* working.cpp */; };
-		EDC840231B0E748D0018FBF4 /* constructors.h in Sources */ = {isa = PBXBuildFile; fileRef = EDC840221B0E748D0018FBF4 /* constructors.h */; };
-		EDC840251B0E793C0018FBF4 /* namespace.h in Sources */ = {isa = PBXBuildFile; fileRef = EDC840241B0E793C0018FBF4 /* namespace.h */; };
+		EDC840271B0FABF10018FBF4 /* rational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDC840261B0FABF10018FBF4 /* rational.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EDC840201B0E6A600018FBF4 /* working.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = working.cpp; sourceTree = "<group>"; };
-		EDC840221B0E748D0018FBF4 /* constructors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constructors.h; sourceTree = "<group>"; };
-		EDC840241B0E793C0018FBF4 /* namespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = namespace.h; sourceTree = "<group>"; };
+		EDC840261B0FABF10018FBF4 /* rational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rational.cpp; sourceTree = "<group>"; };
 		EDDDB92F1B0B043100B1BF4C /* Working */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Working; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -61,9 +57,7 @@
 		EDDDB9311B0B043100B1BF4C /* Working */ = {
 			isa = PBXGroup;
 			children = (
-				EDC840241B0E793C0018FBF4 /* namespace.h */,
-				EDC840221B0E748D0018FBF4 /* constructors.h */,
-				EDC840201B0E6A600018FBF4 /* working.cpp */,
+				EDC840261B0FABF10018FBF4 /* rational.cpp */,
 			);
 			path = Working;
 			sourceTree = "<group>";
@@ -124,9 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDC840231B0E748D0018FBF4 /* constructors.h in Sources */,
-				EDC840211B0E6A600018FBF4 /* working.cpp in Sources */,
-				EDC840251B0E793C0018FBF4 /* namespace.h in Sources */,
+				EDC840271B0FABF10018FBF4 /* rational.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
