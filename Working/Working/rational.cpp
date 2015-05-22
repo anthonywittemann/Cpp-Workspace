@@ -16,6 +16,8 @@ public:
     Rational operator - ( const Rational & ) const;
     Rational operator * ( const Rational & ) const;
     Rational operator / ( const Rational & ) const;
+    
+    operator std::string () const;
 };
 
 //operator overloads to do arithmetic and assignments on rational #s
@@ -42,6 +44,13 @@ Rational Rational::operator * ( const Rational & rhs ) const {
 
 Rational Rational::operator / ( const Rational & rhs ) const {
     return Rational(_n * rhs._d, _d * rhs._n);
+}
+
+Rational::operator std::string () const{
+    const static int maxString = 64;
+    char s[maxString];
+    snprintf(s, maxString, "%d/%d", _n, _d);
+    return std::string(s);
 }
 
 Rational::~Rational() {     //destructor
@@ -91,6 +100,12 @@ int main( int argc, char ** argv ) {
     printf("b: %d/%d\n", b.numerator(), b.denominator());
     printf("c: %d/%d\n", c.numerator(), c.denominator());
     printf("d: %d/%d\n", d.numerator(), d.denominator());
+    
+    
+    //conversion operators (overloading a casting operator)
+    string s = "Rational as a string: ";
+    s += b;
+    cout << s << endl;
     
     return 0;
 }
