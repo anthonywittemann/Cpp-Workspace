@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDC840361B1114730018FBF4 /* simple-inheritance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDC840351B1114730018FBF4 /* simple-inheritance.cpp */; };
+		EDC840381B1131ED0018FBF4 /* template-function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDC840371B1131ED0018FBF4 /* template-function.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EDC840351B1114730018FBF4 /* simple-inheritance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "simple-inheritance.cpp"; sourceTree = "<group>"; };
+		EDC840371B1131ED0018FBF4 /* template-function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "template-function.cpp"; sourceTree = "<group>"; };
 		EDDDB92F1B0B043100B1BF4C /* Working */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Working; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -57,7 +57,7 @@
 		EDDDB9311B0B043100B1BF4C /* Working */ = {
 			isa = PBXGroup;
 			children = (
-				EDC840351B1114730018FBF4 /* simple-inheritance.cpp */,
+				EDC840371B1131ED0018FBF4 /* template-function.cpp */,
 			);
 			path = Working;
 			sourceTree = "<group>";
@@ -118,7 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDC840361B1114730018FBF4 /* simple-inheritance.cpp in Sources */,
+				EDC840381B1131ED0018FBF4 /* template-function.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
