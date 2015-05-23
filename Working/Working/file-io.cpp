@@ -39,6 +39,14 @@ int main( int argc, char ** argv ) {
     rename(fileName, newFileName);
     remove(newFileName);
     
+    //unformatted character i/o
+    const static int BUFFER_SIZE = 256;
+    char buffer[BUFFER_SIZE];
+    fputs("Prompt: ", stdout);
+    fflush(stdout); //FLUSH THE BUFFER!!!!
+    fgets(buffer, BUFFER_SIZE, stdin); //type into the console
+    fputs(buffer, stdout); //print out whatever I typed into the console
+    
     printf("done.\n");
     
     return 0;
