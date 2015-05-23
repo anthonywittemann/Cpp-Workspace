@@ -33,7 +33,9 @@ class Animal {
     friend const string & getAnimalName( const Animal & a );
     
 public:
-    void speak() const;
+    //void speak() const;
+    virtual void speak() const; //allows the method to be overridden in the derived classes - polymorphic
+    virtual ~Animal(){}; //create virtual destructor to match b/c cpp is stupid that way
     const string & name() const { return _name; }
     const string & type() const { return _type; }
     const string & sound() const { return _sound; }
@@ -58,7 +60,14 @@ public:
     Cat( string n ) : Animal(n, "cat", "meow"), Fur("silky"), petted(0) {};
     int pet() { return ++petted; }
     void grooming() const;
+    void speak() const;
 };
+
+//overriding methods in base class
+void Cat::speak() const{
+    printf("purr - fuck you cat\n");
+}
+
 
 //multiple inheritance
 void Cat::grooming() const{
@@ -98,4 +107,9 @@ int main( int argc, char ** argv ) {
     printf("the pig latin pig's name is %s\n", p.pigLatin().c_str());
     printf("the pig's real name is %s\n", getAnimalName(p).c_str());
     c.grooming();
+    
+    Animal *ap[] = { & d, & c, & p };
+    for ( Animal * a: ap ){
+        a->speak(); //cat says meow here rather than purr when speak is not virtual
+    }
 }
