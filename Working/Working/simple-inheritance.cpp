@@ -3,6 +3,16 @@
 #include <string>
 using namespace std;
 
+//another base class for multiple inheritance
+class Fur{
+    string _type;
+    Fur(){};
+protected:
+    Fur(const string & f) : _type(f) {};
+public:
+    const string & getType() const { return _type; }
+};
+
 // Base class
 class Animal {
     string _name;
@@ -42,12 +52,18 @@ public:
 };
 
 // Cat class - derived from Animal
-class Cat : public Animal {
+class Cat : public Animal, public Fur { //multiple inheritance from Animal and Fur
     int petted;
 public:
-    Cat( string n ) : Animal(n, "cat", "meow"), petted(0) {};
+    Cat( string n ) : Animal(n, "cat", "meow"), Fur("silky"), petted(0) {};
     int pet() { return ++petted; }
+    void grooming() const;
 };
+
+//multiple inheritance
+void Cat::grooming() const{
+    printf("%s grooms her %s fur\n", Animal::name().c_str(), Fur::getType().c_str()); //need to specify base class we're calling function on
+}
 
 // Pig class - derived from Animal
 class Pig : public Animal {
@@ -81,4 +97,5 @@ int main( int argc, char ** argv ) {
     printf("the pig has been fed %d times\n", p.feed());
     printf("the pig latin pig's name is %s\n", p.pigLatin().c_str());
     printf("the pig's real name is %s\n", getAnimalName(p).c_str());
+    c.grooming();
 }
