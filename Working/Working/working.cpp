@@ -2,6 +2,7 @@
 #include <cstdint> //for standardizing integer lengths on different OSs
 #include <string>
 #include <typeinfo>
+#include <vector>
 using namespace std;
 
 //defining types with typedef
@@ -79,6 +80,20 @@ int main( int argc, char ** argv )
     auto xa = func(); //compiler automatically decides what type x is
     printf("x is %s\n", xa.c_str());
     printf("type of x is %s\n", typeid(x).name());
+    
+    vector<int32_t> vi = { 3, 5, 7 };
+    //cumbersome AF
+    for(vector<int32_t>::iterator it = vi.begin(); it != vi.end(); ++it){
+        printf("ith vi is %d\n", *it);
+    }
+    //using auto - ok, improvement
+    for(auto it = vi.begin(); it != vi.end(); ++it){
+        printf("ith vi is %d\n", *it);
+    }
+    //using auto and range - yeah buddy!!
+    for(auto i : vi){
+        printf("ith vi is %d\n", i);
+    }
     
     
         return 0;
