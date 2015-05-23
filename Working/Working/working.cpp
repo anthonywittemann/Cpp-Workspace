@@ -1,6 +1,21 @@
 #include <cstdio>
 #include <cstdint> //for standardizing integer lengths on different OSs
+#include <string>
+#include <typeinfo>
 using namespace std;
+
+//defining types with typedef
+typedef unsigned char points_t;
+typedef unsigned char rank_t;
+
+struct score{
+    points_t p;
+    rank_t r;
+};
+
+string func() {
+    return string("this is a string");
+}
 
 int main( int argc, char ** argv )
 {
@@ -49,5 +64,22 @@ int main( int argc, char ** argv )
     //_______________________ char escape sequences_________________
     puts("This is a str \\ \' \" \x40 \u03bc"); //prints out This is a str \ ' " @ μ
     
-    return 0;
+    //_______________________ qualifiers ___________________________
+    //CV Qualifiers                     Storage Duration
+    //const                             static
+    //volatile                          register
+    //mutable                           extern
+    
+    //defining types with typedef - used for architecture independent types
+    //used in cstdint library for uint16_t, int8_t etc.
+    score s = { 5, 1 };
+    printf("Score s has %d points and is ranked %d\n", s.p, s.r);
+    
+    //auto type - like python variables
+    auto xa = func(); //compiler automatically decides what type x is
+    printf("x is %s\n", xa.c_str());
+    printf("type of x is %s\n", typeid(x).name());
+    
+    
+        return 0;
 }
