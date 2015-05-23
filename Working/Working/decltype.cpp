@@ -4,9 +4,9 @@
 #include <typeinfo>
 using namespace std;
 
-
+//generic template for concatinating objects
 template <typename lhsT, typename rhsT>
-auto tf(lhsT & lhs, rhsT & rhs) -> decltype(lhs + rhs){
+auto tf(lhsT & lhs, rhsT & rhs) -> decltype(lhs + rhs){ //decltype chooses string type over const char * type
     return lhs + rhs;
 }
 
@@ -24,6 +24,11 @@ int main( int argc, char ** argv ) {
     cout << "type of strobj is " << typeid(strobj).name() << endl;
     cout << "type of x is " << typeid(x).name() << endl;
     cout << "type of y is " << typeid(y).name() << endl;
+    
+    //using the template
+    auto z = tf(cstr, strobj);
+    cout << "z is " << z << endl;
+    cout << "type of z is " << typeid(z).name() << endl; //returned a string type, not a const char *
     
     return 0;
 }
