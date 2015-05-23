@@ -18,6 +18,17 @@ string func() {
     return string("this is a string");
 }
 
+//bitwise shifting business
+const char * u8_to_bin ( unsigned char x ){
+    static char s[sizeof(char) + 1];
+    for ( char & c : s ) c = 0; // zero out string
+    char * sp = s;
+    for (unsigned char z = 128; z > 0; z >>= 1) {
+        *(sp++) = ((x & z) == z) ? '1' : '0';
+    }
+    return s;
+}
+
 int main( int argc, char ** argv )
 {
     //_____________________integer types_______________________
@@ -95,6 +106,15 @@ int main( int argc, char ** argv )
         printf("ith vi is %d\n", i);
     }
     
+    //bitwise operators
+    unsigned char ch = 5;
+    unsigned char ch1 = 10;
+    printf("x is %s\n", u8_to_bin(ch));
+    printf("y is %s\n", u8_to_bin(ch1));
+    printf("bitwise or result is %s\n", u8_to_bin(ch | ch1));
+    printf("bitwise and result is %s\n", u8_to_bin(ch & ch1));
+    printf("bitwise not result is %s\n", u8_to_bin(~ch));
+    printf("bitwise or result is %s\n", u8_to_bin(ch >> 1));
     
-        return 0;
+    return 0;
 }
