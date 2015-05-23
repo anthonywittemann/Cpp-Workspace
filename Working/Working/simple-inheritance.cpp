@@ -10,10 +10,18 @@ class Animal {
     string _sound;
     // private constructor prevents construction of base class
     Animal(){};
-protected:
+//protected:    //commented out to make these constructors private - now need to use friend
     // protected constructor for use by derived classes
     Animal ( const string & n, const string & t, const string & s )
     : _name(n), _type(t), _sound(s) {}
+    
+    //allows only these classes access to the base classes private constructors and members
+    //undermines encapsulation -- not good
+    friend class Dog;
+    friend class Cat;
+    friend class Pig;
+    friend const string & getAnimalName( const Animal & a );
+    
 public:
     void speak() const;
     const string & name() const { return _name; }
@@ -54,6 +62,11 @@ string Pig::pigLatin() const{
     return name() + "-ay";
 }
 
+//can also friend functions as well as classes
+const string & getAnimalName( const Animal & a ){
+    return a._name;
+}
+
 int main( int argc, char ** argv ) {
     Dog d("Rover");
     Cat c("Fluffy");
@@ -67,4 +80,5 @@ int main( int argc, char ** argv ) {
     printf("the cat has been petted %d times\n", c.pet());
     printf("the pig has been fed %d times\n", p.feed());
     printf("the pig latin pig's name is %s\n", p.pigLatin().c_str());
+    printf("the pig's real name is %s\n", getAnimalName(p).c_str());
 }
