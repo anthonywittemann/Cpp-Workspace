@@ -49,5 +49,21 @@ int main( int argc, char ** argv ) {
     
     printf("done.\n");
     
+    //formatted character i/o
+    int i = 5;
+    long int l = 987654321;
+    const char * s = "silly string";
+    printf("i is: %d, l is %ld, s is %s\n", i, l, s); //print to standard output stream
+    
+    FILE * fileHandle = fopen("sillyFile.txt", "w");
+    fprintf(fileHandle, "i is: %d, l is %ld, s is %s\n", i, l, s); //fprintf - specify output stream
+    fclose(fileHandle);
+    
+    //now with snprintf - can use to put in database 
+    const size_t MAX_BUFFER_SIZE = 128;
+    char buffer1[MAX_BUFFER_SIZE];
+    snprintf(buffer1, MAX_BUFFER_SIZE, "i is: %d, l is %ld, s is %s\n", i, l, s);
+    puts(buffer1);
+    
     return 0;
 }
